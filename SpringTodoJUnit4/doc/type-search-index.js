@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.example.SpringTodo","l":"Todo"},{"p":"com.example.SpringTodo","l":"TodoController"},{"p":"com.example.SpringTodo","l":"TodoControllerTest"},{"p":"com.example.SpringTodo","l":"TodoDownloadAspect"},{"p":"com.example.SpringTodo","l":"TodoMapper"},{"p":"com.example.SpringTodo","l":"TodoService"}]
