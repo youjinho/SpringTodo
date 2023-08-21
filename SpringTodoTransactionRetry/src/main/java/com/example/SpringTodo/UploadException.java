@@ -3,7 +3,7 @@ package com.example.SpringTodo;
 //기본 예외 클래스 임포트
 import java.lang.Exception;
 
-public class UploadException extends Exception {
+public class UploadException extends RuntimeException {
 
  public UploadException() {
      super();

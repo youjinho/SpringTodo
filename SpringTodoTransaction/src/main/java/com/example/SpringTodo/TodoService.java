@@ -20,7 +20,7 @@ public class TodoService {
         return todoMapper.findAll();
     }
 
-    @Transactional
+    @Transactional  // RuntimeException이 발생하면 트랙잰션이 롤백된다.
     public void uploadTodos(List<Todo> todos) throws Exception {
         todoMapper.deleteAll(); // 기존 데이터를 삭제하고 새로운 데이터를 업로드
         
