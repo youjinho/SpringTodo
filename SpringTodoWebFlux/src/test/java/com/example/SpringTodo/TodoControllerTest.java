@@ -33,9 +33,6 @@ public class TodoControllerTest {
 
     @BeforeEach
     public void setup() {
-        // todoController에 todoService를 주입
-        ReflectionTestUtils.setField(todoController, "todoService", todoService);
-
         // 오류 발생: 
         // WARN  org.springframework.context.annotation.AnnotationConfigApplicationContext 
         //   - Exception encountered during context initialization 
@@ -46,7 +43,12 @@ public class TodoControllerTest {
         //   No qualifying bean of type 'com.example.SpringTodo.TodoService' available: 
         //   expected at least 1 bean which qualifies as autowire candidate. 
         //   Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+    	// 해결방법:
+    	//    @AutoWired TodoService todoService; 대신 생성자 주입 방식으로 수정함
         this.webTestClient = WebTestClient.bindToController(todoController).build();
+
+        // todoController에 todoService를 주입
+        ReflectionTestUtils.setField(todoController, "todoService", todoService);
 
         Todo todo1 = new Todo("Task1", "2023-08-14", false);
         Todo todo2 = new Todo("Task2", "2023-08-15", true);

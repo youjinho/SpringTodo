@@ -18,8 +18,12 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class TodoController {
 
-    @Autowired
+    //@Autowired
     private TodoService todoService; // 이 서비스도 리액티브 타입을 반환하도록 수정해야 합니다.
+    
+    public TodoController(TodoService todoService) {
+		this.todoService = todoService;
+	}
 
     @RequestMapping("/")
     public String index() {
